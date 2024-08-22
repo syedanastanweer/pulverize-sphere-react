@@ -17,6 +17,14 @@ code {
 	overflow: hidden;
 }
 
+.lil-gui.autoPlace {
+    display: none;
+}
+
+.lil-gui.autoPlace + div {
+    display: none;
+}
+
 .section-home.websection {
 	position: absolute;
 	top: 0;

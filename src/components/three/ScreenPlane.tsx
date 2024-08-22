@@ -6,36 +6,33 @@ import { fresnel, rotate } from '../../modules/glsl';
 import { GUIController } from '../../modules/gui';
 
 const rand = (min: number, max: number, digit: number) => {
-	let num = Math.random() * (max - min) + min
-	num = Number(num.toFixed(digit))
-	return num
-}
+	let num = Math.random() * (max - min) + min;
+	num = Number(num.toFixed(digit));
+	return num;
+};
 
 const datas = {
 	random: () => {
-		datas.scaleX = rand(0, 10, 1)
-		datas.scaleY = rand(0, 10, 1)
-		datas.scaleZ = rand(0, 10, 1)
-		datas.distortion = rand(0, 1, 2)
-		datas.creepiness = rand(0, 1, 2) > 0.5
+		datas.scaleX = rand(0, 10, 1);
+		datas.scaleY = rand(0, 10, 1);
+		datas.scaleZ = rand(0, 10, 1);
+		datas.creepiness = rand(0, 1, 2) > 0.5;
 	},
 	scaleX: 5,
 	scaleY: 5,
 	scaleZ: 5,
-	distortion: 0,
 	creepiness: false,
-	rotation: true
-}
+	rotation: true,
+};
 
 export const ScreenPlane: VFC = () => {
-	const gui = GUIController.instance.setFolder('Uniforms')
-	gui.addButton(datas, 'random')
-	gui.addNumericSlider(datas, 'scaleX', 0, 10, 0.1, 'scale x').listen()
-	gui.addNumericSlider(datas, 'scaleY', 0, 10, 0.1, 'scale y').listen()
-	gui.addNumericSlider(datas, 'scaleZ', 0, 10, 0.1, 'scale z').listen()
-	gui.addNumericSlider(datas, 'distortion', 0, 1, 0.01).listen()
-	gui.addCheckBox(datas, 'creepiness').listen()
-	gui.addCheckBox(datas, 'rotation')
+	const gui = GUIController.instance.setFolder('Uniforms');
+	gui.addButton(datas, 'random');
+	gui.addNumericSlider(datas, 'scaleX', 0, 10, 0.1, 'scale x').listen();
+	gui.addNumericSlider(datas, 'scaleY', 0, 10, 0.1, 'scale y').listen();
+	gui.addNumericSlider(datas, 'scaleZ', 0, 10, 0.1, 'scale z').listen();
+	gui.addCheckBox(datas, 'creepiness').listen();
+	gui.addCheckBox(datas, 'rotation');
 
 	const shader: THREE.Shader = {
 		uniforms: {
@@ -43,29 +40,45 @@ export const ScreenPlane: VFC = () => {
 			u_aspect: { value: 0 },
 			u_mouse: { value: new THREE.Vector2(0, 0) },
 			u_scale: { value: new THREE.Vector3() },
-			u_distortion: { value: datas.distortion },
-			u_creepiness: { value: datas.creepiness }
+			u_distortion: { value: 0 },
+			u_creepiness: { value: datas.creepiness },
 		},
 		vertexShader: vertexShader,
-		fragmentShader: fragmentShader
-	}
+		fragmentShader: fragmentShader,
+	};
 
-	const vec = new THREE.Vector2()
-	useFrame(({ size, mouse }) => {
-		datas.rotation && (shader.uniforms.u_time.value += 0.005)
-		shader.uniforms.u_aspect.value = size.width / size.height
-		shader.uniforms.u_mouse.value.lerp(vec.set(mouse.x / 2, mouse.y / 2), 0.05)
-		shader.uniforms.u_scale.value.set(datas.scaleX, datas.scaleY, datas.scaleZ)
-		shader.uniforms.u_distortion.value = datas.distortion
-		shader.uniforms.u_creepiness.value = datas.creepiness
-	})
+	const vec = new THREE.Vector2();
+	useFrame(({ size, mouse, clock }) => {
+		const time = clock.getElapsedTime();
+
+		// Subtle oscillation for zoom
+		const zoomFactor = 1 + 0.01 * Math.sin(time * 1.5); // Further reducing the amplitude and increasing frequency
+
+		// Apply zoom effect to the scale uniform
+		shader.uniforms.u_scale.value.set(
+			datas.scaleX * zoomFactor,
+			datas.scaleY * zoomFactor,
+			datas.scaleZ * zoomFactor
+		);
+
+		// Rotate the object if the rotation is enabled
+		if (datas.rotation) {
+			shader.uniforms.u_time.value += 0.005;
+		}
+
+		// Other existing shader uniform updates
+		shader.uniforms.u_distortion.value = (Math.sin(time * 0.5) + 1) / 2;
+		shader.uniforms.u_aspect.value = size.width / size.height;
+		shader.uniforms.u_mouse.value.lerp(vec.set(mouse.x / 2, mouse.y / 2), 0.05);
+		shader.uniforms.u_creepiness.value = datas.creepiness;
+	});
 
 	return (
 		<Plane args={[2, 2]}>
 			<shaderMaterial args={[shader]} />
 		</Plane>
-	)
-}
+	);
+};
 
 const vertexShader = `
 varying vec2 v_uv;
@@ -74,7 +87,7 @@ void main() {
   v_uv = uv;
   gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
 }
-`
+`;
 
 const fragmentShader = `
 uniform float u_time;
@@ -90,7 +103,6 @@ const float PI = 3.14159265358979;
 ${rotate}
 ${fresnel}
 
-// polynomial smooth min 1 (k=0.1)
 float smin( float a, float b, float k ) {
   float h = clamp( 0.5+0.5*(b-a)/k, 0.0, 1.0 );
   return mix( b, a, h ) - k*h*(1.0-h);
@@ -188,4 +200,7 @@ void main() {
 
   gl_FragColor = vec4(color, 1.0);
 }
-`
+`;
+
+
+export default ScreenPlane;
