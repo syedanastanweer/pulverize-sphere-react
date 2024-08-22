@@ -9,7 +9,6 @@ ReactDOM.render(
 		<div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
 			<App />
 			<section className="section-home websection">
-				<div id="particles-js"></div>
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12">
@@ -36,11 +35,11 @@ ReactDOM.render(
 						<div className="navnew">
 							<div className="navnew-link">
 								<div className="link-anchore">
-									<a href="about-us.php">About Jon</a>
-									<a href="press.php">Press</a>
-									<a href="faq.php">Faq's</a>
-									<a href="testimonials.php">Reviews</a>
-									<a href="contact-us.php">Contact Me</a>
+									<a href="about-us">About Jon</a>
+									<a href="press">Press</a>
+									<a href="faq">Faq's</a>
+									<a href="testimonials">Reviews</a>
+									<a href="contact-us">Contact Me</a>
 								</div>
 							</div>
 						</div>

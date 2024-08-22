@@ -5,6 +5,7 @@ body {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: #000000;
 }
 
 code {
@@ -31,7 +32,7 @@ code {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgb(9, 82, 155, 0.2);
 	/* Semi-transparent black background */
 	color: white;
 	/* Ensure text is visible */
@@ -49,7 +50,7 @@ code {
 
 .main-title h2 {
     color: hsla(192, 18%, 49%, 1);
-    text-shadow: 0px 6px 10px #3d5257;
+    /* text-shadow: 0px 6px 10px #3d5257; */
     filter: drop-shadow(0px 6px 10px #3d5257);
     font-size: 100px;
     font-style: normal;
@@ -124,5 +125,20 @@ code {
 		margin-top: 1rem;
 		opacity: 0.9;
 		pointer-events: auto;
+	}
+	.link-anchore a {
+		margin: 4px;
+		color: #ffffff;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 200;
+		letter-spacing: 2px;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-align: center;
+		opacity: 0.8;
+	}
+	.navnew {
+		margin: 12rem 0rem 0rem 0rem;
 	}
 }

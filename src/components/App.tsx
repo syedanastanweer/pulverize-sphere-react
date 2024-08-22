@@ -4,7 +4,7 @@ import { TCanvas } from './three/TCanvas';
 
 export const App: VFC = () => {
 	return (
-		<div style={{ width: '100vw', height: '100vh' }}>
+		<div style={{ width: '100vw', height: '80vh', marginTop: '5%' }}>
 			<TCanvas />
 			{/* <LinkIconButton
 				imagePath="/assets/icons/github.svg"

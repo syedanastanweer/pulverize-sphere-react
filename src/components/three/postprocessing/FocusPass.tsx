@@ -81,16 +81,7 @@ void main() {
     tex += texture2D(tDiffuse, v_uv + dir7 * ratio);
     tex += texture2D(tDiffuse, v_uv + dir8 * ratio);
   }
-  tex /= float(u_samples) * 4.0;
+  tex /= float(u_samples) * 9.0;
   gl_FragColor = tex;
 }
 `
-
-
-
-
-
-
-
-
-
