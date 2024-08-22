@@ -1,0 +1,119 @@
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: 'Futura PT', sans-serif;
+}
+
+* {
+	font-family: 'Futura PT', sans-serif;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.section-home.websection {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Semi-transparent black background */
+	color: white;
+	/* Ensure text is visible */
+	z-index: 10;
+	/* Make sure it's on top */
+	pointer-events: none;
+	/* Prevent interaction with this overlay */
+}
+
+.main-title {
+	margin-top: 22rem;
+	pointer-events: auto;
+	margin-block-end: 0;
+}
+
+.main-title h2 {
+	color: #668A93;
+	font-size: 100px;
+	font-style: normal;
+	font-weight: 200;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 20px;
+	opacity: 0.9;
+	margin-block-end: 0;
+}
+
+.main-title-two h2 {
+	color: #668A93;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 200;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 20px;
+	margin-top: 0rem;
+	opacity: 0.9;
+	pointer-events: auto;
+}
+
+.navnew {
+	margin: 0 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 8rem;
+	pointer-events: auto;
+}
+
+
+.link-anchore a {
+	margin: 0 3rem;
+	color: #668A93;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 200;
+	letter-spacing: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	opacity: 0.9;
+}
+
+.link-anchore a:hover {
+	opacity: 1;
+}
+
+@media screen and (min-width: 320px) and (max-width: 520px) {
+
+	.main-title h2 {
+		color: #668A93;
+		font-size: 34px;
+		font-style: normal;
+		font-weight: 200;
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: 2px;
+		opacity: 0.9;
+		margin-block-end: 0;
+	}
+
+	.main-title-two h2 {
+		color: #668A93;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 200;
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: 2px;
+		margin-top: 1rem;
+		opacity: 0.9;
+		pointer-events: auto;
+	}
+}
