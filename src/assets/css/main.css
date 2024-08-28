@@ -1,3 +1,4 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
 @import url('https://fonts.cdnfonts.com/css/futura-pt');
 
 body {
@@ -30,6 +31,7 @@ code {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+	background-color: #000000;
 }
 
 .appmaindiv {
@@ -115,6 +117,10 @@ code {
 
 .about-page {
 	animation: slideIn 1s ease-out;
+}
+
+.card-img-top{
+	width: 100%;
 }
 
 @keyframes slideIn {
