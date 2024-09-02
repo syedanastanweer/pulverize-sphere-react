@@ -90,9 +90,11 @@ code {
 	opacity: 0.9;
 	pointer-events: auto;
 }
-
+.section-home-two{
+	margin: 12rem 0rem 0rem 0rem;
+}
 .navnew {
-	margin: 12rem 6rem 0rem 6rem;
+	/* margin: 12rem 6rem 0rem 6rem; */
 	text-transform: uppercase;
 	text-align: center;
 	pointer-events: auto;

@@ -46,7 +46,7 @@ ReactDOM.render(
               <div className="navnew">
                 <div className="navnew-link">
                   <div className="link-anchore">
-                    <a href="/about-us" className="nav-link">About Jon</a>
+                    <a href="/about-us">About Jon</a>
                     <a href="/press">Press</a>
                     <a href="/faq">Faq's</a>
                     <a href="/testimonials">Reviews</a>

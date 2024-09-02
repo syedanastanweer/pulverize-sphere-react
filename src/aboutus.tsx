@@ -14,12 +14,12 @@ export const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="indexmaindiv">
+    <div className="indexmaindiv" style={{ zIndex: '11' }}>
       <div className="sectionmain">
-        <div className="about-page container">
+        <div className="about-page container" style={{marginTop: '8%'}}>
           <div className="row">
             <div className="col-md-6 d-flex justify-content-center">
-              <div className="card" style={{ width: '18rem', marginTop: '10%' }}>
+              <div className="card" style={{ width: 'width: 100%;', marginTop: '4%'}}>
                 <img className="card-img-top" src="/assets/img/project1.jpg" alt="Card image cap" />
                 <div className="card-body">
                   <h5 className="card-title">Card title</h5>
@@ -32,7 +32,7 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="col-md-6 d-flex justify-content-center">
-              <div className="card" style={{ width: '18rem', marginTop: '10%' }}>
+              <div className="card" style={{ width: 'width: 100%;', marginTop: '4%' }}>
                 <img className="card-img-top" src="/assets/img/project1.jpg" alt="Card image cap" />
                 <div className="card-body">
                   <h5 className="card-title">Card title</h5>
@@ -46,12 +46,12 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="section-home-two aboutus">
+        <div className="section-home-two aboutus" style={{marginTop: 80}}>
           <div className="row">
             <div className="navnew">
               <div className="navnew-link">
                 <div className="link-anchore">
-                  <a href="/about-us" className="nav-link">About Jon</a>
+                  <a href="/about-us">About Jon</a>
                   <a href="/press">Press</a>
                   <a href="/faq">Faq's</a>
                   <a href="/testimonials">Reviews</a>
