@@ -38,11 +38,12 @@ code {
 	width: 100vw;
 	height: 80vh;
 	margin-top: 5%;
+	background-color: #00a6ff;
 }
 
 
 .sectionmain {
-	background-color: rgb(9, 82, 155, 0.2);
+	/* background-color: rgb(9, 82, 155, 0.2); */
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -60,7 +61,7 @@ code {
 
 
 .main-title {
-	margin-top: 20rem;
+	margin-top: 26rem;
 	pointer-events: auto;
 	margin-block-end: 0;
 }
@@ -91,7 +92,7 @@ code {
 	pointer-events: auto;
 }
 .section-home-two{
-	margin: 12rem 0rem 0rem 0rem;
+	margin: 14rem 0rem 0rem 0rem;
 }
 .navnew {
 	/* margin: 12rem 6rem 0rem 6rem; */

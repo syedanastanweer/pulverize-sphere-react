@@ -8,5 +8,5 @@ export const App: VFC = () => {
     <div className='appmaindiv'>
       <TCanvas />
     </div>
-  )
-}
+  );
+};
