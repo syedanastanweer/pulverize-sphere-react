@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './assets/css/about.css';
 
 export const AboutPage: React.FC = () => {
-  const navigate = useNavigate();
+  // Removed 'navigate' since it's not used
 
   useEffect(() => {
     const scrollToTop = () => {
@@ -16,37 +15,37 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="indexmaindiv" style={{ zIndex: '11' }}>
       <div className="sectionmain">
-        <div className="about-page container" style={{marginTop: '8%'}}>
+        <div className="about-page container" style={{ marginTop: '8%' }}>
           <div className="row">
             <div className="col-md-6 d-flex justify-content-center">
-              <div className="card" style={{ width: 'width: 100%;', marginTop: '4%'}}>
-                <img className="card-img-top" src="/assets/img/project1.jpg" alt="Card image cap" />
+              <div className="card" style={{ width: '100%', marginTop: '4%' }}>
+                <img className="card-img-top" src="/assets/img/project1.jpg" alt="Project 1" />
                 <div className="card-body">
                   <h5 className="card-title">Card title</h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
+                  <a href="/project-details" className="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
             </div>
 
             <div className="col-md-6 d-flex justify-content-center">
-              <div className="card" style={{ width: 'width: 100%;', marginTop: '4%' }}>
-                <img className="card-img-top" src="/assets/img/project1.jpg" alt="Card image cap" />
+              <div className="card" style={{ width: '100%', marginTop: '4%' }}>
+                <img className="card-img-top" src="/assets/img/project1.jpg" alt="Project 1" />
                 <div className="card-body">
                   <h5 className="card-title">Card title</h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
+                  <a href="/project-details" className="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="section-home-two aboutus" style={{marginTop: 80}}>
+        <div className="section-home-two aboutus" style={{ marginTop: 80 }}>
           <div className="row">
             <div className="navnew">
               <div className="navnew-link">
@@ -64,4 +63,4 @@ export const AboutPage: React.FC = () => {
       </div>
     </div>
   );
-}
+};
