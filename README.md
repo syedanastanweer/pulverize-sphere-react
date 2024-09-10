@@ -1,18 +1,18 @@
-# About
+## About
 In this application, we have replicated the model of [Richard Mattka's site](https://richardmattka.com/).
 <br>
 The gyoroid parameters can be manipulated to create a variety of shapes.
 
 
-# Git Repo URL
+## Git Repo URL
 https://github.com/syedanastanweer/pulverize-sphere-react.git
 
-# Live URL
+## Live URL
 https://pulverize-sphere-react.vercel.app
 
 <!-- ![output(video-cutter-js com)](https://user-images.githubusercontent.com/46724121/158643883-9a77a4c3-dfd7-4e81-ad78-f8313e547161.gif) -->
 
-# Technology
+## Technology
 
 - TypeScript
 - React（Create React App）
@@ -20,7 +20,7 @@ https://pulverize-sphere-react.vercel.app
 - Raymarching
 - Post-processing
 
-# Reference
+## Reference
 This is a technical document on Raymarching. They are all very easy to understand and are excellent documents.
 
 <!-- * [wgld.org](https://wgld.org/d/glsl/g008.html) - Japanese
@@ -28,7 +28,7 @@ This is a technical document on Raymarching. They are all very easy to understan
 * [Raymarching simple scene #48](https://www.youtube.com/watch?v=q2WcGi3Cr9w&t=6s)
 * [Live Coding and Alien Orb - Modeling & Shadows](https://www.youtube.com/watch?v=b0AayhCO7s8&t=416s) -->
 
-# License
+## License
 
 This source code is not MIT License.
 
