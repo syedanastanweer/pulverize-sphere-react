@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { App } from './components/App';
-import { AboutPage } from './aboutus';
+import { AboutPage } from './pages/AboutPage';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -14,6 +14,7 @@ ReactDOM.render(
           <Route path="/" element={<App />} />
           <Route path="/about-us" element={<AboutPage />} />
         </Routes>
+
         {/* This section applies globally */}
         <section className="sectionmain">
           <div className="section-home-one">
@@ -41,6 +42,8 @@ ReactDOM.render(
               </div>
             </div>
           </div>
+
+          {/* Navigation links */}
           <div className="section-home-two">
             <div className="row">
               <div className="navnew">
@@ -57,7 +60,6 @@ ReactDOM.render(
             </div>
           </div>
         </section>
-
       </div>
     </Router>
   </React.StrictMode>,
